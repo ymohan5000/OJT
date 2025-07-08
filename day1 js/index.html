@@ -6,17 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-
-    
-
-    <script>
-let a=3;
-console.log(a);
+    <label for="">Email</label>
+    <input type="email" name="" id="btn">  
+    <input type="submit" value="submit">
 
 
+     <script>
+        let btn1=document.querySelector("#btn");
+        btn1.addEventListener('change',()=>
+        {
+            console.log(btn1.value);
+        })
 
-// v8 engine compiler javascript ko ho 
-//node js install through 
+     
     </script>
+
 </body>
 </html>
