@@ -1,0 +1,13 @@
+let a=10;
+let b=20;
+let sum,sub,mul,div,persentage;
+sum=a+b;
+sub=a-b;
+mul=a*b;
+div=a/b;
+persentage=a%b;
+console.log("the sum of two number is "+sum);
+console.log("the subtration of two number is"+sub);
+console.log("the multiplaicaion of two number is "+mul);
+console.log("the two number division is"+div);
+console.log("the two number persentage is"+persentage);

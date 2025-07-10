@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohan Yadav | Portfolio</title>
+
+  <!-- Icons & Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #111;
+      --accent: #0066ff;
+      --footer-bg: #f0f0f0;
+      --nav-bg: var(--accent);
+      --nav-link-hover: #004fcc;
+      --skills-bg: #ddd;
+    }
+
+    body.dark-mode {
+      --bg-color: #111;
+      --text-color: #eee;
+      --footer-bg: #222;
+      --nav-bg: #004fcc;
+      --nav-link-hover: #3399ff;
+      --skills-bg: #333;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--nav-bg);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header div {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--nav-link-hover);
+      outline: none;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--nav-link-hover);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      font-size: 1.4rem;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255 255 255 / 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .dark-toggle:hover,
+    .dark-toggle:focus {
+      background: rgba(255 255 255 / 0.4);
+      outline: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .skills-bar {
+      background: var(--skills-bg);
+      border-radius: 5px;
+      margin: 0.5rem 0;
+      overflow: hidden;
+    }
+
+    .skills-bar span {
+      display: block;
+      padding: 0.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 5px;
+      width: 0; /* animate width */
+      white-space: nowrap;
+      font-weight: 600;
+      animation: grow 1.5s ease forwards;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgb(0 102 255 / 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: #004fcc;
+      outline: none;
+    }
+
+    .project {
+      margin-bottom: 1rem;
+    }
+
+    .project h4 {
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--footer-bg);
+      color: var(--text-color);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      nav a {
+        margin: 0 0.5rem;
+      }
+
+      .dark-toggle {
+        width: 28px;
+        height: 28px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Mohan Yadav</strong></div>
+    <nav>
+      <a href="#about" tabindex="0">About</a>
+      <a href="#skills" tabindex="0">Skills</a>
+      <a href="#projects" tabindex="0">Projects</a>
+      <a href="#contact" tabindex="0">Contact</a>
+      <span
+        class="dark-toggle"
+        role="button"
+        tabindex="0"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+        >🌙</span
+      >
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm Mohan Yadav, a frontend developer passionate about building beautiful
+        and interactive websites. I have experience with HTML, CSS, JS, and
+        frameworks like Bootstrap and WordPress.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <h4>Frontend</h4>
+      <div class="skills-bar"><span data-width="90%">HTML</span></div>
+      <div class="skills-bar"><span data-width="85%">CSS</span></div>
+      <div class="skills-bar"><span data-width="75%">JavaScript</span></div>
+      <div class="skills-bar"><span data-width="70%">Bootstrap</span></div>
+
+      <h4>Backend</h4>
+      <div class="skills-bar"><span data-width="60%">PHP</span></div>
+      <div class="skills-bar"><span data-width="50%">Java</span></div>
+      <div class="skills-bar"><span data-width="50%">Python</span></div>
+      <div class="skills-bar"><span data-width="40%">C++</span></div>
+
+      <h4>Databases</h4>
+      <div class="skills-bar"><span data-width="70%">MySQL</span></div>
+      <div class="skills-bar"><span data-width="60%">PostgreSQL</span></div>
+      <div class="skills-bar"><span data-width="50%">MongoDB</span></div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h4>Portfolio Website</h4>
+        <p>A personal website to showcase my skills and work.</p>
+      </div>
+      <div class="project">
+        <h4>Client Management System</h4>
+        <p>Web app for tracking projects and client feedback.</p>
+      </div>
+      <div class="project">
+        <h4>Weather Dashboard</h4>
+        <p>Real-time weather data using API integration.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:mohan5000@gmail.com">mohan5000@gmail.com</a></p>
+      <p>Phone: +977 9811639830</p>
+      <a class="btn" href="cv.pdf" download>Download CV</a>
+    </section>
+  </div>
+
+  <footer>
+    <p id="footer-year">© 2025 Mohan Yadav - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Set footer year dynamically
+    document.getElementById('footer-year').textContent = `© ${new Date().getFullYear()} Mohan Yadav - All Rights Reserved`;
+
+    // Dark mode toggle logic
+    function toggleDark() {
+      document.body.classList.toggle('dark-mode');
+      // Save preference
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load saved theme and animate skills on DOM load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+      animateSkills();
+    });
+
+    // Dark mode toggle button
+    const darkToggle = document.querySelector('.dark-toggle');
+    darkToggle.addEventListener('click', toggleDark);
+    darkToggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        toggleDark();
+        e.preventDefault();
+      }
+    });
+
+    // Animate skill bars
+    function animateSkills() {
+      const spans = document.querySelectorAll('.skills-bar span');
+      spans.forEach(span => {
+        const width = span.getAttribute('data-width');
+        span.style.width = width;
+      });
+    }
+  </script>
+</body>
+</html>
