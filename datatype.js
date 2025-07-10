@@ -28,6 +28,9 @@ console.log(typeof uniqueID); // "symbol"
 const bigIntValue = 1234567890123456789012345678901234567890n;
 console.log(typeof bigIntValue); // "bigint"    
 
+
+
+
 // 2. reference data types
 // strored by reference not by value.They are mutable
 // object   
@@ -36,3 +39,13 @@ let person = {
     age: 30,
     isEmployed: true
 };
+console.log (typeof person); // "object"
+// array
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers); // "object"
+
+// function
+function greet() {
+    console.log("Hello!");
+}
+console.log(greet); // "function"    
